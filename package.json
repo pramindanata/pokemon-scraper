@@ -11,7 +11,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:img-scrap": "node ./src/index-img-scraper.js",
-    "dev:img-scrap": "nodemon --exec \"npm run start:img-scrap\""
+    "start:img-dl": "node ./src/index-img-dl.js",
+    "dev:img-scrap": "nodemon --exec \"npm run start:img-scrap\"",
+    "dev:img-dl": "nodemon --exec \"npm run start:img-dl\""
   },
   "keywords": [],
   "author": "",
@@ -30,6 +32,7 @@
   },
   "dependencies": {
     "cli-progress": "^3.8.2",
+    "node-fetch": "^2.6.0",
     "puppeteer": "^3.1.0"
   }
 }

@@ -5,7 +5,7 @@ const path = require('path')
 
 const config = require('./config')
 const util = require('./util')
-const pokemons = require('./data/pokemon-v2.json')
+const pokemons = require('./data/pokemon.json')
 
 const imageBaseUrl = 'https://id.portal-pokemon.com/play/pokedex'
 
@@ -46,7 +46,7 @@ async function main() {
   )
 
   // Start bar
-  console.log('Fetching images url...')
+  console.log('[x] Fetching images url...')
   bar.start(pokemons.length, 0)
 
   // Explore
@@ -88,19 +88,16 @@ async function main() {
 
   if (errors.length > 0) {
     console.log(
-      'Found error in',
+      '[x] Found error in',
       errors.map((index) => `#${index}`),
     )
   }
 
-  const pathname = '/dump/json/images.json'
+  const pathname = path.join(config.basePath, '/dump/json/images.json')
 
-  await fs.promises.writeFile(
-    path.join(config.basePath, pathname),
-    JSON.stringify(result),
-  )
+  await fs.promises.writeFile(pathname, JSON.stringify(result))
 
-  console.log(`Fetching done. Saved in ${pathname}`)
+  console.log(`[x] Fetching done. Saved in "${pathname}"`)
 
   await browser.close()
 }
