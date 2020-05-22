@@ -30,23 +30,10 @@ async function main() {
   const pages = await browser.pages()
 
   // Set interceptor
-  await Promise.all(
-    pages.map((page) => {
-      page.setRequestInterception(true)
-      page.on('request', (req) => {
-        const type = req.resourceType()
-
-        if (type === 'image' || type === 'stylesheet' || type === 'script') {
-          return req.abort()
-        }
-
-        req.continue()
-      })
-    }),
-  )
+  await Promise.all(pages.map((page) => util.removeAssetOnReq(page)))
 
   // Start bar
-  console.log('[x] Fetching images url...')
+  console.log('[x] Scraping images URL...')
   bar.start(pokemons.length, 0)
 
   // Explore
@@ -97,9 +84,9 @@ async function main() {
 
   await fs.promises.writeFile(pathname, JSON.stringify(result))
 
-  console.log(`[x] Fetching done. Saved in "${pathname}"`)
+  console.log(`[x] Scraping done. Saved in "${pathname}"`)
 
   await browser.close()
 }
 
-main().catch((err) => console.log(err))
+module.exports = main

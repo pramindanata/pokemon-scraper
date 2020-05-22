@@ -1,24 +1,25 @@
-# [WIP] Pokemon Scraper
+# Pokemon Scraper
 
-Scrap and download some data for my campus project. Scraped data:
+Scrap and download some Pokeon data for my campus project. Scraped data:
 
-- Pokemon image URL
+- Pokemon image URLs.
+- Pokemon description.
+
+Downloaded data:
+
+- Pokemon images.
 
 Data source:
 
-- [Pokemon list (CSV)](https://www.kaggle.com/abcsds/pokemon)
-- [Image](https://id.portal-pokemon.com/play/pokedex)
+- [Base data (CSV)](https://www.kaggle.com/abcsds/pokemon).
+- [Pokemon images](https://id.portal-pokemon.com/play/pokedex).
+- [Pokemon descriptions](https://id.portal-pokemon.com/play/pokedex).
+
+Scraped and downloaded data will be saved in `/dump` directory.
 
 ## Development
 
 1. Run `npm install` to install all depedencies.
-2. Run one from these commands:
-
-    ```js
-    // Scrap images url
-    npm run start:img-scrap
-
-    // [WIP]
-    ```
-
-3. Done.
+2. Run `npm start` to start scraping.
+3. ...
+4. Enjoy 😊.

@@ -68,6 +68,4 @@ async function main() {
   console.log(`[x] Pokemon JSON file created, saved in "${newPokemonPath}".`)
 }
 
-main().catch((err) => {
-  console.log(err)
-})
+module.exports = main

@@ -10,10 +10,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:img-scrap": "node ./src/index-img-scraper.js",
-    "start:img-dl": "node ./src/index-img-dl.js",
-    "dev:img-scrap": "nodemon --exec \"npm run start:img-scrap\"",
-    "dev:img-dl": "nodemon --exec \"npm run start:img-dl\""
+    "start": "node ./src/index",
+    "dev": "nodemon --exec \"npm run start\"",
+    "lint": "eslint \"./src/**/*.js\""
   },
   "keywords": [],
   "author": "",

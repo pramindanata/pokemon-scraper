@@ -21,3 +21,16 @@ exports.chunk = async (arr, chunkLimit, cb) => {
     await cb(chunks)
   }
 }
+
+exports.removeAssetOnReq = (page) => {
+  page.setRequestInterception(true)
+  page.on('request', (req) => {
+    const type = req.resourceType()
+
+    if (type === 'image' || type === 'stylesheet' || type === 'script') {
+      return req.abort()
+    }
+
+    req.continue()
+  })
+}
