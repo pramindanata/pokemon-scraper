@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "nodemonConfig": {
+    "ignore": [
+      "dump/*"
+    ]
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:img-scrap": "node ./src/index-img-scraper.js",
@@ -24,6 +29,7 @@
     "prettier": "^2.0.5"
   },
   "dependencies": {
+    "cli-progress": "^3.8.2",
     "puppeteer": "^3.1.0"
   }
 }
