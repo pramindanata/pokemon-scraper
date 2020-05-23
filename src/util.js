@@ -14,7 +14,7 @@ exports.chunk = async (arr, chunkLimit, cb) => {
     //   break
     // }
 
-    const start = i * 5
+    const start = i * chunkLimit
     const end = start + chunkLimit
     const chunks = arr.slice(start, end)
 
