@@ -75,7 +75,7 @@ async function main() {
 
   if (errors.length > 0) {
     console.log(
-      '[x] Found error in',
+      '[x] Found missing image in',
       errors.map((index) => `#${index}`),
     )
   }

@@ -28,7 +28,7 @@ for (let i = 0; i < pokemons.length; i++) {
     index: pokemon['#'],
     name: pokemon.Name,
     generation: pokemon.Generation,
-    legendary: pokemon.Legendary === 'True',
+    legendary: pokemon.Legendary === 'TRUE',
     typeA: pokemon['Type 1'],
     typeB: pokemon['Type 2'] !== '' ? pokemon['Type 2'] : null,
     hp: pokemon.HP,
