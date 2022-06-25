@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "cli-progress": "^3.8.2",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.7",
     "puppeteer": "^3.1.0"
   }
 }
